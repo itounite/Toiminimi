@@ -2,7 +2,7 @@ import React from 'react';
 import { Moon, Sun, Share2, Check, MapPin } from 'lucide-react';
 import { ThemeMode } from '../types';
 import { ADVISORY_INFO } from '../data/advisoryData';
-import sagarPhoto from '../assets/images/st_umito.jpg';
+import nordicGif from '../assets/images/nordic_art.gif';
 
 interface HeaderProps {
   theme: ThemeMode;
@@ -90,10 +90,15 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
         <div className="relative shrink-0">
           <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-white p-1 bg-white dark:bg-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,1)]">
             <img
-              src={sagarPhoto}
-              alt="Sagar Tandon"
+              src={nordicGif}
+              alt="Nordic Aurora — Finland"
               className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-300"
-              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src !== window.location.origin + '/nordic_art.gif') {
+                  target.src = '/nordic_art.gif';
+                }
+              }}
             />
           </div>
           <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-white dark:text-black text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-white">

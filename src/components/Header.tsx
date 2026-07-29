@@ -108,57 +108,102 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Main Profile Showcase */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full max-w-xl">
         
-        {/* Nordic Topographic & Pine Pattern Visual Box */}
+        {/* Nordic Archipelago & Green Forest Lake Visual Box */}
         <div className="relative shrink-0">
-          <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-sky-300 p-2 bg-gradient-to-br from-amber-50 to-orange-100/50 dark:from-slate-950 dark:to-sky-950 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)] relative overflow-hidden flex items-center justify-center">
+          <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-sky-300 p-1 bg-gradient-to-br from-emerald-50 via-sky-50 to-amber-50/60 dark:from-slate-950 dark:via-slate-900 dark:to-sky-950 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)] relative overflow-hidden flex items-center justify-center">
             <svg
               viewBox="0 0 200 200"
-              className="w-full h-full text-neutral-800 dark:text-sky-200 stroke-current fill-none"
+              className="w-full h-full"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Topographic Contour Lines */}
+              <defs>
+                {/* Gradient for Baltic Sea / Finnish Lake Water */}
+                <linearGradient id="lakeWater" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#0284c7" stopOpacity="0.8" />
+                </linearGradient>
+
+                {/* Gradient for Forest Silhouette */}
+                <linearGradient id="forestGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#10b981" />
+                  <stop offset="100%" stopColor="#047857" />
+                </linearGradient>
+
+                <linearGradient id="deepForest" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#059669" />
+                  <stop offset="100%" stopColor="#064e3b" />
+                </linearGradient>
+              </defs>
+
+              {/* Sky Background & Midnight Sun / Horizon Glow */}
+              <circle cx="150" cy="45" r="22" className="fill-amber-300/60 dark:fill-sky-300/30" />
+              <circle cx="150" cy="45" r="32" className="fill-amber-200/20 dark:fill-sky-400/10" />
+
+              {/* Soaring Seagulls over Baltic Waters */}
+              <path d="M 25 38 Q 30 32, 35 38 Q 40 32, 45 38" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-neutral-700 dark:text-sky-200" />
+              <path d="M 50 28 Q 54 23, 58 28 Q 62 23, 66 28" fill="none" stroke="currentColor" strokeWidth="1" className="text-neutral-700 dark:text-sky-200" />
+
+              {/* Distant Forest Ridge Across the Lake */}
               <path
-                d="M -20 40 Q 50 10, 110 50 T 220 30"
-                strokeWidth="1.2"
-                strokeDasharray="4 3"
-              />
-              <path
-                d="M -10 75 Q 60 45, 120 85 T 220 65"
-                strokeWidth="1.2"
-              />
-              <path
-                d="M -30 110 Q 40 85, 100 120 T 220 100"
-                strokeWidth="0.8"
+                d="M 0 120 L 15 110 L 22 120 L 35 105 L 45 120 L 60 100 L 72 120 L 88 108 L 100 120 L 120 102 L 135 120 L 160 112 L 175 120 L 200 115 L 200 140 L 0 140 Z"
+                className="fill-emerald-800/40 dark:fill-sky-900/60"
               />
 
-              {/* Minimalist Line Pine / Spruce Trees */}
-              {/* Tree 1 (Left Pine) */}
-              <g strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="52" y1="115" x2="52" y2="195" />
-                <path d="M 52 115 L 36 135 M 52 115 L 68 135" />
-                <path d="M 52 135 L 28 158 M 52 135 L 76 158" />
-                <path d="M 52 155 L 20 182 M 52 155 L 84 182" />
+              {/* Baltic Sea / Lake Surface */}
+              <rect x="0" y="132" width="200" height="68" fill="url(#lakeWater)" />
+
+              {/* Water Wave Ripples */}
+              <g fill="none" stroke="currentColor" strokeWidth="1" className="text-sky-100 dark:text-sky-200 opacity-70">
+                <path d="M 10 142 Q 35 138, 60 142 T 110 142 T 160 142" />
+                <path d="M 70 154 Q 95 150, 120 154 T 170 154" />
+                <path d="M 20 168 Q 50 164, 80 168 T 140 168" />
+                <path d="M 110 182 Q 135 178, 160 182" />
               </g>
 
-              {/* Tree 2 (Center-Right Tall Pine) */}
-              <g strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="135" y1="72" x2="135" y2="198" />
-                <path d="M 135 72 L 118 95 M 135 72 L 152 95" />
-                <path d="M 135 92 L 108 122 M 135 92 L 162 122" />
-                <path d="M 135 115 L 98 150 M 135 115 L 172 150" />
-                <path d="M 135 142 L 90 182 M 135 142 L 180 182" />
+              {/* Rocky Granite Island Shoreline (Foreground Right & Center) */}
+              <path
+                d="M 60 200 C 60 170, 80 148, 120 148 C 155 148, 190 160, 200 175 L 200 200 Z"
+                className="fill-stone-300 dark:fill-slate-800 stroke-neutral-800 dark:stroke-sky-300"
+                strokeWidth="1.2"
+              />
+
+              {/* Wooden Sauna Jetty / Pier into Lake */}
+              <g stroke="currentColor" strokeWidth="1.5" className="text-neutral-800 dark:text-sky-200" fill="none">
+                {/* Support Stilts */}
+                <line x1="25" y1="162" x2="25" y2="175" />
+                <line x1="45" y1="160" x2="45" y2="172" />
+                <line x1="65" y1="158" x2="65" y2="168" />
+                {/* Pier Planks */}
+                <line x1="15" y1="162" x2="75" y2="158" strokeWidth="2.5" />
               </g>
 
-              {/* Tree 3 (Far Right Small Pine) */}
-              <g strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.85">
-                <line x1="188" y1="135" x2="188" y2="198" />
-                <path d="M 188 135 L 177 150 M 188 135 L 199 150" />
-                <path d="M 188 150 L 170 170 M 188 150 L 206 170" />
-                <path d="M 188 167 L 164 193 M 188 167 L 212 193" />
+              {/* Lush Green Pine & Spruce Trees on Shore */}
+              {/* Spruce 1 - Big Foreground Pine */}
+              <g className="text-neutral-900 dark:text-sky-100">
+                {/* Trunk */}
+                <line x1="135" y1="100" x2="135" y2="162" stroke="#451a03" strokeWidth="3" />
+                {/* Foliage Layers */}
+                <path d="M 135 80 L 118 108 H 152 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="1" />
+                <path d="M 135 98 L 112 128 H 158 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="1" />
+                <path d="M 135 118 L 105 152 H 165 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="1" />
+              </g>
+
+              {/* Spruce 2 - Medium Pine */}
+              <g className="text-neutral-900 dark:text-sky-100">
+                <line x1="172" y1="120" x2="172" y2="170" stroke="#451a03" strokeWidth="2.5" />
+                <path d="M 172 105 L 158 128 H 186 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M 172 122 L 152 148 H 192 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
+              </g>
+
+              {/* Spruce 3 - Small Left Pine on Rock */}
+              <g className="text-neutral-900 dark:text-sky-100">
+                <line x1="95" y1="130" x2="95" y2="160" stroke="#451a03" strokeWidth="2" />
+                <path d="M 95 120 L 83 138 H 107 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M 95 132 L 78 152 H 112 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
               </g>
             </svg>
           </div>
-          <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-sky-400 dark:text-slate-950 text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-sky-300 select-none">
+          <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-sky-400 dark:text-slate-950 text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-sky-300 select-none shadow-sm">
             {t.finlandBadge}
           </div>
         </div>

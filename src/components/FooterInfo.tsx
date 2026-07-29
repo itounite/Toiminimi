@@ -1,9 +1,16 @@
 import React from 'react';
 import { ExternalLink, Building2, ShieldCheck, Copy, Check } from 'lucide-react';
 import { ADVISORY_INFO } from '../data/advisoryData';
+import { LanguageMode } from '../types';
+import { getTranslation } from '../data/translations';
 
-export const FooterInfo: React.FC = () => {
+interface FooterInfoProps {
+  lang: LanguageMode;
+}
+
+export const FooterInfo: React.FC<FooterInfoProps> = ({ lang }) => {
   const [copiedId, setCopiedId] = React.useState(false);
+  const t = getTranslation(lang);
 
   const copyBusinessId = async () => {
     await navigator.clipboard.writeText(ADVISORY_INFO.businessId);
@@ -14,7 +21,7 @@ export const FooterInfo: React.FC = () => {
   return (
     <footer className="w-full pt-8 pb-4 border-t-2 border-black dark:border-white text-xs font-mono text-neutral-900 dark:text-neutral-100 space-y-4">
       
-      {/* Registry Badges Grid - Completely aligned without awkward line breaks */}
+      {/* Registry Badges Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         
         {/* Business ID Card */}
@@ -23,7 +30,7 @@ export const FooterInfo: React.FC = () => {
             <Building2 className="w-4 h-4 shrink-0 text-black dark:text-white" />
             <div className="flex flex-col min-w-0">
               <span className="text-[10px] uppercase text-neutral-500 dark:text-neutral-400 font-bold tracking-wider">
-                Business ID
+                {t.footerBizId}
               </span>
               <span className="font-bold tabular-nums text-sm text-black dark:text-white whitespace-nowrap">
                 {ADVISORY_INFO.businessId}
@@ -40,12 +47,12 @@ export const FooterInfo: React.FC = () => {
             {copiedId ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-[11px]">COPIED</span>
+                <span className="text-[11px]">{t.copied}</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5" />
-                <span className="text-[11px]">COPY</span>
+                <span className="text-[11px]">{t.copy}</span>
               </>
             )}
           </button>
@@ -57,10 +64,10 @@ export const FooterInfo: React.FC = () => {
             <ShieldCheck className="w-4 h-4 shrink-0 text-black dark:text-white" />
             <div className="flex flex-col min-w-0">
               <span className="text-[10px] uppercase text-neutral-500 dark:text-neutral-400 font-bold tracking-wider">
-                Registration (YTJ)
+                {t.footerYtjLabel}
               </span>
               <span className="font-bold text-xs text-black dark:text-white truncate">
-                Finnish Trade Register
+                {t.footerYtjValue}
               </span>
             </div>
           </div>
@@ -72,7 +79,7 @@ export const FooterInfo: React.FC = () => {
             id="ytj-registry-link"
             className="px-2.5 py-1.5 border border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all flex items-center gap-1 shrink-0 font-bold text-[11px]"
           >
-            <span>VERIFY</span>
+            <span>{t.footerVerify}</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -81,8 +88,9 @@ export const FooterInfo: React.FC = () => {
 
       {/* Footer Copyright */}
       <div className="pt-2 text-center text-[11px] text-neutral-500 dark:text-neutral-400 font-sans tracking-wide">
-        &copy; {new Date().getFullYear()} Sagar Tandon Advisory &bull; All Rights Reserved &bull; Helsinki, Finland
+        &copy; {new Date().getFullYear()} Sagar Tandon Advisory &bull; {t.footerCopyright} &bull; {t.locationText}
       </div>
     </footer>
   );
 };
+

@@ -16,3 +16,4 @@ export interface NewsletterInfo {
 }
 
 export type ThemeMode = 'light' | 'dark';
+export type LanguageMode = 'en' | 'fi';

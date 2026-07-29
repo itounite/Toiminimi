@@ -1,19 +1,25 @@
 import React from 'react';
 import { Mail, BookOpen, Layers, ArrowUpRight } from 'lucide-react';
+import { LanguageMode } from '../types';
+import { getTranslation } from '../data/translations';
 
 interface ActionButtonsProps {
+  lang: LanguageMode;
   onOpenNewsletter: (id: string) => void;
   onOpenContact: () => void;
 }
 
 export const ActionButtons: React.FC<ActionButtonsProps> = ({
+  lang,
   onOpenNewsletter,
   onOpenContact,
 }) => {
+  const t = getTranslation(lang);
+
   return (
     <div className="w-full pt-6 pb-2 space-y-4">
       <div className="text-center font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
-        Direct Action &amp; Communication Channels
+        {t.actionHeader}
       </div>
 
       {/* Primary Action Buttons Bar */}
@@ -48,10 +54,11 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
           className="w-full py-3 px-4 border-2 border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-mono text-xs sm:text-sm font-bold tracking-wider hover:opacity-85 transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-2 cursor-pointer group"
         >
           <Mail className="w-4 h-4 transition-transform group-hover:scale-110" />
-          <span>Direct Email</span>
+          <span>{t.btnDirectEmail}</span>
         </button>
 
       </div>
     </div>
   );
 };
+

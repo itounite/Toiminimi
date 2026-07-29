@@ -2,7 +2,6 @@ import React from 'react';
 import { Moon, Sun, Share2, Check, MapPin } from 'lucide-react';
 import { ThemeMode } from '../types';
 import { ADVISORY_INFO } from '../data/advisoryData';
-import nordicGif from '../assets/images/nordic_art.gif';
 
 interface HeaderProps {
   theme: ThemeMode;
@@ -84,48 +83,23 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
       </div>
 
       {/* Main Profile Showcase */}
-      <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 w-full max-w-xl">
+      <div className="flex flex-col items-start text-left space-y-2.5 w-full max-w-xl">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-sans uppercase leading-none">
+          Sagar Tandon
+        </h1>
         
-        {/* Crisp B&W Editorial Portrait Image */}
-        <div className="relative shrink-0">
-          <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-white p-1 bg-white dark:bg-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,1)]">
-            <img
-              src={nordicGif}
-              alt="Nordic Aurora — Finland"
-              className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-300"
-              onError={(e) => {
-                const target = e.currentTarget;
-                if (target.src !== window.location.origin + '/nordic_art.gif') {
-                  target.src = '/nordic_art.gif';
-                }
-              }}
-            />
-          </div>
-          <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-white dark:text-black text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-white">
-            FINLAND
-          </div>
+        <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-neutral-800 dark:text-neutral-200 uppercase">
+          Strategic Advisory &bull; Conscious Capital
+        </p>
+
+        <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed max-w-md">
+          Specializing in Impact Investing, Investment Research, Private Markets, Accelerator Design &amp; Nordic Market Entry.
+        </p>
+
+        <div className="pt-1 flex items-center gap-2 text-[11px] font-mono text-neutral-500 dark:text-neutral-400">
+          <MapPin className="w-3.5 h-3.5 shrink-0" />
+          <span className="font-medium">{ADVISORY_INFO.location}</span>
         </div>
-
-        {/* Name & Title Summary */}
-        <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-2">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-sans uppercase leading-none">
-            Sagar Tandon
-          </h1>
-          
-          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-neutral-800 dark:text-neutral-200 uppercase">
-            Strategic Advisory &bull; Conscious Capital
-          </p>
-
-          <p className="text-xs text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed max-w-sm">
-            Specializing in Impact Investing, Investment Research, Private Markets, Accelerator Design & Nordic Market Entry.
-          </p>
-
-          <div className="pt-1 flex items-center gap-2 text-[11px] font-mono text-neutral-500 dark:text-neutral-400">
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
-            <span className="font-medium">{ADVISORY_INFO.location}</span>
-          </div>
-        </div>
-
       </div>
 
     </header>

@@ -25,36 +25,36 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ lang, newslett
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-md bg-white dark:bg-black text-black dark:text-white border-2 border-black dark:border-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] p-6 font-sans">
+      <div className="relative w-full max-w-md bg-white dark:bg-slate-950 text-black dark:text-sky-100 border-2 border-black dark:border-sky-300 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(56,189,248,0.8)] p-6 font-sans">
         
         {/* Header */}
-        <div className="flex items-start justify-between border-b border-black dark:border-white pb-3 mb-4">
+        <div className="flex items-start justify-between border-b border-black dark:border-sky-300 pb-3 mb-4">
           <div>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 block">{t.newsletterSubstackTag}</span>
-            <h2 className="font-mono font-bold text-lg leading-snug">{title}</h2>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 dark:text-sky-300 block">{t.newsletterSubstackTag}</span>
+            <h2 className="font-mono font-bold text-lg leading-snug text-black dark:text-sky-100">{title}</h2>
           </div>
           <button
             onClick={onClose}
             id="close-newsletter-modal"
-            className="p-1 border border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer shrink-0"
+            className="p-1 border border-black dark:border-sky-300 hover:bg-black hover:text-white dark:hover:bg-sky-400 dark:hover:text-slate-950 transition-colors cursor-pointer shrink-0"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Subtitle */}
-        <div className="mb-4 text-xs font-mono font-semibold uppercase tracking-wide px-2 py-1 bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700">
+        <div className="mb-4 text-xs font-mono font-semibold uppercase tracking-wide px-2 py-1 bg-amber-50/50 dark:bg-sky-950/80 border border-neutral-300 dark:border-sky-800 text-black dark:text-sky-200">
           {subtitle}
         </div>
 
         {/* Description */}
-        <p className="text-sm text-neutral-800 dark:text-neutral-200 leading-relaxed mb-5">
+        <p className="text-sm text-neutral-800 dark:text-sky-100 leading-relaxed mb-5">
           {description}
         </p>
 
         {/* Topics Covered */}
         <div className="mb-6">
-          <h3 className="font-mono text-xs uppercase font-bold mb-2 flex items-center gap-1.5">
+          <h3 className="font-mono text-xs uppercase font-bold mb-2 flex items-center gap-1.5 text-black dark:text-sky-300">
             <Bookmark className="w-3.5 h-3.5" />
             <span>{t.newsletterKeyThemes}</span>
           </h3>
@@ -62,9 +62,9 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ lang, newslett
             {topics.map((topic, i) => (
               <span
                 key={i}
-                className="text-xs font-mono px-2 py-1 border border-black dark:border-white bg-white dark:bg-black flex items-center gap-1"
+                className="text-xs font-mono px-2 py-1 border border-black dark:border-sky-300 bg-white dark:bg-slate-900 text-black dark:text-sky-100 flex items-center gap-1"
               >
-                <Check className="w-3 h-3 text-black dark:text-white" />
+                <Check className="w-3 h-3 text-black dark:text-sky-300" />
                 {topic}
               </span>
             ))}
@@ -76,7 +76,7 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ lang, newslett
           href={newsletter.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full py-3 px-4 bg-black dark:bg-white text-white dark:text-black font-mono text-xs sm:text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]"
+          className="w-full py-3 px-4 bg-black text-white dark:bg-sky-400 dark:text-slate-950 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(56,189,248,0.8)]"
         >
           <span>{t.newsletterSubscribeBtn}</span>
           <ExternalLink className="w-4 h-4" />

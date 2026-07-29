@@ -56,13 +56,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-100 dark:bg-neutral-950 text-black dark:text-white transition-colors duration-200 py-6 sm:py-12 px-3 sm:px-6 flex flex-col items-center justify-center font-sans relative overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50/70 via-neutral-100 to-amber-100/40 dark:from-slate-950 dark:via-sky-950 dark:to-indigo-950 text-neutral-900 dark:text-sky-50 transition-colors duration-300 py-6 sm:py-12 px-3 sm:px-6 flex flex-col items-center justify-center font-sans relative overflow-x-hidden">
       
-      {/* Black & White Artistic Nordic Line Art Background */}
-      <NordicBackground />
+      {/* Black & White Artistic Nordic Line Art + Seasonal Background (Sunlight Radiation in Summer / Ice Frost in Winter) */}
+      <NordicBackground theme={theme} />
 
       {/* Main Single Page Frame */}
-      <main className="w-full max-w-3xl bg-white dark:bg-black border-2 sm:border-4 border-black dark:border-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] p-5 sm:p-10 space-y-10 relative z-10 overflow-hidden transition-all duration-200">
+      <main className="w-full max-w-3xl bg-white/95 dark:bg-slate-900/90 border-2 sm:border-4 border-neutral-900 dark:border-sky-300 shadow-[8px_8px_0px_0px_rgba(180,83,9,0.3)] dark:shadow-[8px_8px_0px_0px_rgba(56,189,248,0.7)] p-5 sm:p-10 space-y-10 relative z-10 overflow-hidden transition-all duration-300 backdrop-blur-sm">
         
         {/* Header with Headshot & Profile */}
         <Header

@@ -38,13 +38,13 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="relative w-full flex flex-col items-center pt-8 pb-8 border-b-2 border-black dark:border-white transition-colors duration-200">
+    <header className="relative w-full flex flex-col items-center pt-8 pb-8 border-b-2 border-black dark:border-sky-300 transition-colors duration-300">
       
       {/* Top Utility Actions Bar */}
-      <div className="w-full flex flex-wrap items-center justify-between gap-3 mb-8 pb-3 border-b border-neutral-300 dark:border-neutral-800 text-xs font-mono">
+      <div className="w-full flex flex-wrap items-center justify-between gap-3 mb-8 pb-3 border-b border-neutral-300 dark:border-sky-800/60 text-xs font-mono">
         <div className="flex items-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span className="text-[11px] uppercase tracking-widest text-neutral-600 dark:text-neutral-400 font-bold">
+          <span className="text-[11px] uppercase tracking-widest text-neutral-600 dark:text-sky-300 font-bold">
             {t.headerLocationBadge}
           </span>
         </div>
@@ -55,9 +55,9 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onToggleLanguage}
             id="lang-toggle-btn"
             title={lang === 'en' ? 'Vaihda suomeksi (Switch to Suomi)' : 'Switch to English'}
-            className="px-2.5 py-1.5 border border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-all flex items-center gap-1.5 cursor-pointer font-bold"
+            className="px-2.5 py-1.5 border border-black dark:border-sky-300 bg-white dark:bg-slate-950 text-black dark:text-sky-100 hover:bg-amber-100/50 dark:hover:bg-sky-900/60 transition-all flex items-center gap-1.5 cursor-pointer font-bold"
           >
-            <Globe className="w-3.5 h-3.5 text-neutral-600 dark:text-neutral-400" />
+            <Globe className="w-3.5 h-3.5 text-neutral-600 dark:text-sky-300" />
             <span className="text-[11px] font-mono tracking-wider">
               {lang === 'en' ? 'SUOMI' : 'ENGLISH'}
             </span>
@@ -68,11 +68,11 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={handleShare}
             id="share-btn"
             title="Share page"
-            className="px-2.5 py-1.5 border border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all flex items-center gap-1.5 cursor-pointer font-bold"
+            className="px-2.5 py-1.5 border border-black dark:border-sky-300 bg-white dark:bg-slate-950 text-black dark:text-sky-100 hover:bg-neutral-100 dark:hover:bg-sky-900/60 transition-all flex items-center gap-1.5 cursor-pointer font-bold"
           >
             {copiedShare ? (
               <>
-                <Check className="w-3.5 h-3.5" />
+                <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                 <span>{t.copied}</span>
               </>
             ) : (
@@ -88,17 +88,17 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onToggleTheme}
             id="theme-toggle-btn"
             title={`Switch season: ${theme === 'light' ? t.winterMode : t.summerMode}`}
-            className="px-3 py-1.5 border-2 border-black dark:border-white bg-black text-white dark:bg-white dark:text-black hover:opacity-85 transition-all flex items-center gap-1.5 cursor-pointer font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]"
+            className="px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-amber-100 text-amber-950 dark:bg-sky-950 dark:text-sky-100 hover:opacity-90 transition-all flex items-center gap-1.5 cursor-pointer font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)]"
           >
             {theme === 'light' ? (
               <>
-                <Sun className="w-3.5 h-3.5 text-amber-300 dark:text-amber-500" />
-                <span>{t.summerMode}</span>
+                <Sun className="w-3.5 h-3.5 text-amber-600" />
+                <span className="text-amber-950">{t.summerMode}</span>
               </>
             ) : (
               <>
-                <Snowflake className="w-3.5 h-3.5 text-sky-400 dark:text-sky-600" />
-                <span>{t.winterMode}</span>
+                <Snowflake className="w-3.5 h-3.5 text-sky-300" />
+                <span className="text-sky-100">{t.winterMode}</span>
               </>
             )}
           </button>
@@ -110,10 +110,10 @@ export const Header: React.FC<HeaderProps> = ({
         
         {/* Nordic Topographic & Pine Pattern Visual Box */}
         <div className="relative shrink-0">
-          <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-white p-2 bg-neutral-100 dark:bg-neutral-900 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,1)] relative overflow-hidden flex items-center justify-center">
+          <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-sky-300 p-2 bg-gradient-to-br from-amber-50 to-orange-100/50 dark:from-slate-950 dark:to-sky-950 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)] relative overflow-hidden flex items-center justify-center">
             <svg
               viewBox="0 0 200 200"
-              className="w-full h-full text-neutral-800 dark:text-neutral-200 stroke-current fill-none"
+              className="w-full h-full text-neutral-800 dark:text-sky-200 stroke-current fill-none"
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Topographic Contour Lines */}
@@ -158,26 +158,26 @@ export const Header: React.FC<HeaderProps> = ({
               </g>
             </svg>
           </div>
-          <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-white dark:text-black text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-white select-none">
+          <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-sky-400 dark:text-slate-950 text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-sky-300 select-none">
             {t.finlandBadge}
           </div>
         </div>
 
         {/* Name & Title Summary */}
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-2">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-sans uppercase leading-none">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-sans uppercase leading-none text-black dark:text-sky-100">
             {t.name}
           </h1>
           
-          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-neutral-800 dark:text-neutral-200 uppercase">
+          <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-neutral-800 dark:text-sky-300 uppercase">
             {t.subtitle}
           </p>
 
-          <p className="text-xs text-neutral-600 dark:text-neutral-400 font-sans leading-relaxed max-w-sm">
+          <p className="text-xs text-neutral-600 dark:text-sky-200 font-sans leading-relaxed max-w-sm">
             {t.headerDesc}
           </p>
 
-          <div className="pt-1 flex items-center gap-2 text-[11px] font-mono text-neutral-500 dark:text-neutral-400">
+          <div className="pt-1 flex items-center gap-2 text-[11px] font-mono text-neutral-500 dark:text-sky-300">
             <MapPin className="w-3.5 h-3.5 shrink-0" />
             <span className="font-medium">{t.locationText}</span>
           </div>

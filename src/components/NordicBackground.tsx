@@ -1,8 +1,66 @@
 import React from 'react';
+import { ThemeMode } from '../types';
 
-export const NordicBackground: React.FC = () => {
+interface NordicBackgroundProps {
+  theme?: ThemeMode;
+}
+
+export const NordicBackground: React.FC<NordicBackgroundProps> = ({ theme = 'light' }) => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none text-neutral-600 dark:text-neutral-100 opacity-65 dark:opacity-85 transition-colors duration-300">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none text-neutral-600 dark:text-sky-200 opacity-70 dark:opacity-90 transition-all duration-300">
+      
+      {/* Summer Midnight Sun Radiation Effect */}
+      {theme === 'light' && (
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none opacity-40 sm:opacity-60 transition-opacity duration-500">
+          <div
+            className="w-full h-full"
+            style={{
+              background: 'radial-gradient(circle at 75% 15%, rgba(251, 191, 36, 0.35) 0%, rgba(253, 224, 71, 0.15) 45%, transparent 70%)',
+            }}
+          />
+          {/* Radiant Sun Rays Line Art */}
+          <svg
+            className="absolute top-0 right-0 w-80 h-80 text-amber-500/40"
+            viewBox="0 0 200 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="160" cy="40" r="28" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 2" />
+            <circle cx="160" cy="40" r="18" fill="currentColor" opacity="0.1" />
+            {/* Sun Rays */}
+            <line x1="160" y1="2" x2="160" y2="8" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="160" y1="72" x2="160" y2="78" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="122" y1="40" x2="128" y2="40" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="192" y1="40" x2="198" y2="40" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="133" y1="13" x2="137" y2="17" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="183" y1="63" x2="187" y2="67" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="133" y1="67" x2="137" y2="63" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="183" y1="17" x2="187" y2="13" stroke="currentColor" strokeWidth="1.5" />
+          </svg>
+        </div>
+      )}
+
+      {/* Winter Ice Frost Aura Effect */}
+      {theme === 'dark' && (
+        <div className="absolute inset-0 pointer-events-none transition-opacity duration-500">
+          <div
+            className="w-full h-full"
+            style={{
+              background: 'radial-gradient(circle at 20% 20%, rgba(186, 230, 253, 0.2) 0%, rgba(125, 211, 252, 0.08) 45%, transparent 70%)',
+            }}
+          />
+          {/* Floating Ice Crystal Line Art */}
+          <svg
+            className="absolute top-12 left-1/4 w-32 h-32 text-sky-300/30"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M50 10 V90 M10 50 H90 M22 22 L78 78 M22 78 L78 22" stroke="currentColor" strokeWidth="1" />
+            <circle cx="50" cy="50" r="15" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 2" />
+          </svg>
+        </div>
+      )}
       
       {/* Left Margin - Nordic Pine Forest & Archipelago Topography */}
       <svg
@@ -84,7 +142,7 @@ export const NordicBackground: React.FC = () => {
           <path d="M 40 270 Q 90 260, 140 270 T 240 270 T 310 270" strokeWidth="0.7" />
         </g>
 
-        {/* Coastal Rock Island Lines (Bohuslän / Finnish Archipelago Skärgård) */}
+        {/* Coastal Rock Island Lines */}
         <path
           d="M 320 320 C 260 300, 180 340, 150 400 C 120 460, 180 540, 240 580 C 290 610, 310 680, 260 740 C 220 790, 280 860, 320 890"
           stroke="currentColor"
@@ -97,7 +155,7 @@ export const NordicBackground: React.FC = () => {
           strokeDasharray="5 3"
         />
 
-        {/* Tree on Coastal Cliff (Right Edge) */}
+        {/* Tree on Coastal Cliff */}
         <g stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
           <line x1="220" y1="410" x2="220" y2="620" />
           <path d="M 220 410 L 205 440 M 220 410 L 235 440" />
@@ -119,3 +177,4 @@ export const NordicBackground: React.FC = () => {
     </div>
   );
 };
+

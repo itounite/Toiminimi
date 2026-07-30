@@ -88,17 +88,17 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onToggleTheme}
             id="theme-toggle-btn"
             title={`Switch season: ${theme === 'light' ? t.winterMode : t.summerMode}`}
-            className="px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-amber-100 text-amber-950 dark:bg-sky-950 dark:text-sky-100 hover:opacity-90 transition-all flex items-center gap-1.5 cursor-pointer font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)]"
+            className="px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-amber-100/80 dark:bg-sky-950 text-amber-950 dark:text-sky-100 hover:opacity-90 transition-all flex items-center gap-1.5 cursor-pointer font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)]"
           >
             {theme === 'light' ? (
               <>
-                <Sun className="w-3.5 h-3.5 text-amber-600" />
-                <span className="text-amber-950">{t.summerMode}</span>
+                <Snowflake className="w-3.5 h-3.5 text-sky-700" />
+                <span className="text-amber-950">{t.winterMode}</span>
               </>
             ) : (
               <>
-                <Snowflake className="w-3.5 h-3.5 text-sky-300" />
-                <span className="text-sky-100">{t.winterMode}</span>
+                <Sun className="w-3.5 h-3.5 text-amber-400" />
+                <span className="text-sky-100">{t.summerMode}</span>
               </>
             )}
           </button>

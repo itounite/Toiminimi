@@ -88,17 +88,17 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onToggleTheme}
             id="theme-toggle-btn"
             title={`Switch season: ${theme === 'light' ? t.winterMode : t.summerMode}`}
-            className="px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-amber-100/80 dark:bg-sky-950 text-amber-950 dark:text-sky-100 hover:opacity-90 transition-all flex items-center gap-1.5 cursor-pointer font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)]"
+            className="px-2.5 sm:px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-amber-100/80 dark:bg-sky-950 text-amber-950 dark:text-sky-100 hover:opacity-90 transition-all flex items-center gap-1.5 cursor-pointer font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)] text-xs"
           >
             {theme === 'light' ? (
               <>
-                <Snowflake className="w-3.5 h-3.5 text-sky-700" />
-                <span className="text-amber-950">{t.winterMode}</span>
+                <Snowflake className="w-3.5 h-3.5 text-sky-700 shrink-0" />
+                <span className="text-amber-950 text-[11px] sm:text-xs">{t.winterMode}</span>
               </>
             ) : (
               <>
-                <Sun className="w-3.5 h-3.5 text-amber-400" />
-                <span className="text-sky-100">{t.summerMode}</span>
+                <Sun className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span className="text-sky-100 text-[11px] sm:text-xs">{t.summerMode}</span>
               </>
             )}
           </button>
@@ -106,11 +106,11 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Profile Showcase */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 w-full max-w-xl">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-8 w-full max-w-xl">
         
-        {/* Nordic Archipelago & Green Forest Lake Visual Box */}
+        {/* Nordic Archipelago & Green Forest Lake Visual Box - Optimised for Mobile, Tablet & Desktop */}
         <div className="relative shrink-0">
-          <div className="w-32 h-32 sm:w-36 sm:h-36 border-2 border-black dark:border-sky-300 p-1 bg-gradient-to-br from-emerald-50 via-sky-50 to-amber-50/60 dark:from-slate-950 dark:via-slate-900 dark:to-sky-950 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)] relative overflow-hidden flex items-center justify-center">
+          <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 border-2 sm:border-3 border-black dark:border-sky-300 p-1.5 bg-gradient-to-br from-emerald-50 via-sky-50 to-amber-50/70 dark:from-slate-950 dark:via-slate-900 dark:to-sky-950 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)] relative overflow-hidden flex items-center justify-center">
             <svg
               viewBox="0 0 200 200"
               className="w-full h-full"
@@ -119,50 +119,50 @@ export const Header: React.FC<HeaderProps> = ({
               <defs>
                 {/* Gradient for Baltic Sea / Finnish Lake Water */}
                 <linearGradient id="lakeWater" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#0284c7" stopOpacity="0.8" />
+                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#0284c7" stopOpacity="0.85" />
                 </linearGradient>
 
                 {/* Gradient for Forest Silhouette */}
                 <linearGradient id="forestGreen" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#10b981" />
+                  <stop offset="0%" stopColor="#34d399" />
                   <stop offset="100%" stopColor="#047857" />
                 </linearGradient>
 
                 <linearGradient id="deepForest" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#059669" />
+                  <stop offset="0%" stopColor="#10b981" />
                   <stop offset="100%" stopColor="#064e3b" />
                 </linearGradient>
               </defs>
 
-              {/* Sky Background & Midnight Sun / Horizon Glow */}
-              <circle cx="150" cy="45" r="22" className="fill-amber-300/60 dark:fill-sky-300/30" />
-              <circle cx="150" cy="45" r="32" className="fill-amber-200/20 dark:fill-sky-400/10" />
+              {/* Sky Background & Sun/Ice Glow */}
+              <circle cx="155" cy="40" r="22" className="fill-amber-300/70 dark:fill-sky-300/40" />
+              <circle cx="155" cy="40" r="32" className="fill-amber-200/30 dark:fill-sky-400/20" />
 
               {/* Soaring Seagulls over Baltic Waters */}
-              <path d="M 25 38 Q 30 32, 35 38 Q 40 32, 45 38" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-neutral-700 dark:text-sky-200" />
-              <path d="M 50 28 Q 54 23, 58 28 Q 62 23, 66 28" fill="none" stroke="currentColor" strokeWidth="1" className="text-neutral-700 dark:text-sky-200" />
+              <path d="M 20 32 Q 25 26, 30 32 Q 35 26, 40 32" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-neutral-700 dark:text-sky-200" />
+              <path d="M 45 22 Q 49 17, 53 22 Q 57 17, 61 22" fill="none" stroke="currentColor" strokeWidth="1" className="text-neutral-700 dark:text-sky-200" />
 
               {/* Distant Forest Ridge Across the Lake */}
               <path
-                d="M 0 120 L 15 110 L 22 120 L 35 105 L 45 120 L 60 100 L 72 120 L 88 108 L 100 120 L 120 102 L 135 120 L 160 112 L 175 120 L 200 115 L 200 140 L 0 140 Z"
-                className="fill-emerald-800/40 dark:fill-sky-900/60"
+                d="M 0 115 L 12 105 L 20 115 L 32 98 L 42 115 L 58 95 L 70 115 L 85 102 L 98 115 L 118 96 L 132 115 L 155 106 L 170 115 L 190 108 L 200 115 L 200 138 L 0 138 Z"
+                className="fill-emerald-800/50 dark:fill-sky-900/70"
               />
 
               {/* Baltic Sea / Lake Surface */}
-              <rect x="0" y="132" width="200" height="68" fill="url(#lakeWater)" />
+              <rect x="0" y="130" width="200" height="70" fill="url(#lakeWater)" />
 
               {/* Water Wave Ripples */}
-              <g fill="none" stroke="currentColor" strokeWidth="1" className="text-sky-100 dark:text-sky-200 opacity-70">
-                <path d="M 10 142 Q 35 138, 60 142 T 110 142 T 160 142" />
-                <path d="M 70 154 Q 95 150, 120 154 T 170 154" />
-                <path d="M 20 168 Q 50 164, 80 168 T 140 168" />
-                <path d="M 110 182 Q 135 178, 160 182" />
+              <g fill="none" stroke="currentColor" strokeWidth="1" className="text-sky-100 dark:text-sky-200 opacity-80">
+                <path d="M 8 138 Q 30 134, 55 138 T 105 138 T 155 138" />
+                <path d="M 65 150 Q 90 146, 115 150 T 165 150" />
+                <path d="M 15 164 Q 45 160, 75 164 T 135 164" />
+                <path d="M 100 178 Q 125 174, 150 178" />
               </g>
 
               {/* Rocky Granite Island Shoreline (Foreground Right & Center) */}
               <path
-                d="M 60 200 C 60 170, 80 148, 120 148 C 155 148, 190 160, 200 175 L 200 200 Z"
+                d="M 50 200 C 50 168, 75 145, 115 145 C 150 145, 185 158, 200 172 L 200 200 Z"
                 className="fill-stone-300 dark:fill-slate-800 stroke-neutral-800 dark:stroke-sky-300"
                 strokeWidth="1.2"
               />
@@ -170,40 +170,41 @@ export const Header: React.FC<HeaderProps> = ({
               {/* Wooden Sauna Jetty / Pier into Lake */}
               <g stroke="currentColor" strokeWidth="1.5" className="text-neutral-800 dark:text-sky-200" fill="none">
                 {/* Support Stilts */}
-                <line x1="25" y1="162" x2="25" y2="175" />
-                <line x1="45" y1="160" x2="45" y2="172" />
-                <line x1="65" y1="158" x2="65" y2="168" />
+                <line x1="20" y1="158" x2="20" y2="172" />
+                <line x1="40" y1="156" x2="40" y2="168" />
+                <line x1="60" y1="154" x2="60" y2="164" />
                 {/* Pier Planks */}
-                <line x1="15" y1="162" x2="75" y2="158" strokeWidth="2.5" />
+                <line x1="10" y1="158" x2="70" y2="154" strokeWidth="2.5" />
               </g>
 
-              {/* Lush Green Pine & Spruce Trees on Shore */}
-              {/* Spruce 1 - Big Foreground Pine */}
+              {/* Lush Green Pine & Spruce Trees on Shore - Crisp & Large */}
+              {/* Spruce 1 - Big Tall Main Pine Tree */}
               <g className="text-neutral-900 dark:text-sky-100">
-                {/* Trunk */}
-                <line x1="135" y1="100" x2="135" y2="162" stroke="#451a03" strokeWidth="3" />
-                {/* Foliage Layers */}
-                <path d="M 135 80 L 118 108 H 152 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="1" />
-                <path d="M 135 98 L 112 128 H 158 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="1" />
-                <path d="M 135 118 L 105 152 H 165 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="1" />
+                <line x1="125" y1="85" x2="125" y2="160" stroke="#451a03" strokeWidth="3" />
+                <path d="M 125 60 L 110 88 H 140 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="1" />
+                <path d="M 125 80 L 104 110 H 146 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="1" />
+                <path d="M 125 100 L 98 132 H 152 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="1" />
+                <path d="M 125 120 L 92 155 H 158 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="1" />
               </g>
 
-              {/* Spruce 2 - Medium Pine */}
+              {/* Spruce 2 - Medium Pine Tree Right */}
               <g className="text-neutral-900 dark:text-sky-100">
-                <line x1="172" y1="120" x2="172" y2="170" stroke="#451a03" strokeWidth="2.5" />
-                <path d="M 172 105 L 158 128 H 186 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
-                <path d="M 172 122 L 152 148 H 192 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
+                <line x1="168" y1="105" x2="168" y2="168" stroke="#451a03" strokeWidth="2.5" />
+                <path d="M 168 88 L 154 112 H 182 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M 168 106 L 148 132 H 188 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M 168 125 L 142 154 H 194 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
               </g>
 
-              {/* Spruce 3 - Small Left Pine on Rock */}
+              {/* Spruce 3 - Left Pine Tree on Shore Rock */}
               <g className="text-neutral-900 dark:text-sky-100">
-                <line x1="95" y1="130" x2="95" y2="160" stroke="#451a03" strokeWidth="2" />
-                <path d="M 95 120 L 83 138 H 107 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
-                <path d="M 95 132 L 78 152 H 112 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
+                <line x1="88" y1="120" x2="88" y2="158" stroke="#451a03" strokeWidth="2" />
+                <path d="M 88 102 L 76 122 H 100 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M 88 116 L 72 138 H 104 Z" fill="url(#deepForest)" stroke="currentColor" strokeWidth="0.8" />
+                <path d="M 88 130 L 66 154 H 110 Z" fill="url(#forestGreen)" stroke="currentColor" strokeWidth="0.8" />
               </g>
             </svg>
           </div>
-          <div className="absolute -bottom-2 -right-2 bg-black text-white dark:bg-sky-400 dark:text-slate-950 text-[9px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-sky-300 select-none shadow-sm">
+          <div className="absolute -bottom-1 -right-1 bg-black text-white dark:bg-sky-400 dark:text-slate-950 text-[9px] sm:text-[10px] font-mono px-2 py-0.5 font-bold uppercase tracking-widest border border-black dark:border-sky-300 select-none shadow-md z-10">
             {t.finlandBadge}
           </div>
         </div>

@@ -9,26 +9,6 @@ export const NordicBackground: React.FC<NordicBackgroundProps> = ({ theme = 'lig
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none text-neutral-600 dark:text-sky-200 opacity-70 dark:opacity-90 transition-all duration-300">
       
-      {/* Mobile Top Pine Forest Silhouette Banner (Visible on mobile/tablet) */}
-      <div className="absolute top-0 inset-x-0 h-24 sm:h-32 opacity-80 sm:opacity-90 overflow-hidden">
-        <svg
-          className="w-full h-full text-emerald-800/25 dark:text-sky-300/20"
-          viewBox="0 0 800 120"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Top Edge Forest Horizon */}
-          <path
-            d="M 0 0 L 20 40 L 35 20 L 50 55 L 70 30 L 90 65 L 115 25 L 135 60 L 160 35 L 180 70 L 210 20 L 235 55 L 260 25 L 290 65 L 320 30 L 350 75 L 380 20 L 410 60 L 440 25 L 470 65 L 500 30 L 530 70 L 560 20 L 590 60 L 620 25 L 650 65 L 680 30 L 710 70 L 740 20 L 770 55 L 800 0 Z"
-            fill="currentColor"
-          />
-          {/* Baltic Wave Line */}
-          <path d="M 0 70 Q 200 50, 400 70 T 800 70" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 50 88 Q 250 70, 450 88 T 750 88" stroke="currentColor" strokeWidth="1" strokeDasharray="6 4" />
-        </svg>
-      </div>
-
       {/* Summer Midnight Sun Radiation Effect */}
       {theme === 'light' && (
         <div className="absolute top-0 right-0 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] pointer-events-none opacity-40 sm:opacity-60 transition-opacity duration-500">
@@ -209,22 +189,6 @@ export const NordicBackground: React.FC<NordicBackgroundProps> = ({ theme = 'lig
           <path d="M 120 935 C 180 920, 240 940, 310 925" strokeWidth="1" />
         </g>
       </svg>
-
-      {/* Mobile Bottom Pine Forest & Baltic Wave Banner */}
-      <div className="absolute bottom-0 inset-x-0 h-20 sm:h-28 opacity-80 overflow-hidden">
-        <svg
-          className="w-full h-full text-emerald-900/20 dark:text-sky-300/15"
-          viewBox="0 0 800 100"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M 0 100 L 25 50 L 50 80 L 80 40 L 110 85 L 140 45 L 175 90 L 210 50 L 240 80 L 280 35 L 320 85 L 360 45 L 400 90 L 440 50 L 480 80 L 520 40 L 560 85 L 600 45 L 640 90 L 680 50 L 720 80 L 760 40 L 800 100 Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
 
     </div>
   );

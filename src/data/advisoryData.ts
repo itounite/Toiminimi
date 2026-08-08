@@ -52,7 +52,8 @@ export const ADVISORY_INFO = {
 
   researchInitiative: {
     name: "Upstream Institute",
-    url: "https://upstreaminstitute.space-z.ai/",
+    url: "https://upstreaminstitute.org/",
+    whitePaperUrl: "https://upstreaminstitute.org/#white-paper",
     description: "Focused on the reimagination of capital stewardship at the intersection of philosophy, science, tech, and finance, integrating the works of David Bohm from the lens of Paavo Pylkkänen.",
     guidanceMentors: [
       { name: "Paavo Pylkkänen", role: "Theoretical Physicist & Philosopher of Mind", url: "https://en.wikipedia.org/wiki/Paavo_Pylkk%C3%A4nen" },

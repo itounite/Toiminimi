@@ -48,6 +48,7 @@ export const TRANSLATIONS = {
     // Section 03
     sec3Tag: "Research Initiative • Think Tank",
     sec3VisitWeb: "Visit Website",
+    sec3WhitePaper: "White Paper",
     sec3GuidanceLabel: "Guidance & Philosophical Framework:",
     researchInitiative: {
       name: "Upstream Institute",
@@ -147,6 +148,7 @@ export const TRANSLATIONS = {
     // Section 03
     sec3Tag: "Tutkimusaloite • Ajatushautomo",
     sec3VisitWeb: "Vieraile sivustolla",
+    sec3WhitePaper: "Valkoinen kirja (White Paper)",
     sec3GuidanceLabel: "Ohjaus ja filosofinen viitekehys:",
     researchInitiative: {
       name: "Upstream Institute",

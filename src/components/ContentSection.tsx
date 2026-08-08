@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles, Compass, Lightbulb, Landmark, ArrowUpRight, CheckCircle2, Globe, Users } from 'lucide-react';
+import { ExternalLink, Sparkles, Compass, Lightbulb, Landmark, ArrowUpRight, CheckCircle2, Globe, Users, FileText } from 'lucide-react';
 import { ADVISORY_INFO, NEWSLETTERS } from '../data/advisoryData';
 import { LanguageMode } from '../types';
 import { getTranslation } from '../data/translations';
@@ -120,22 +120,35 @@ export const ContentSection: React.FC<ContentSectionProps> = ({ lang, onOpenNews
       </section>
 
       {/* 3. Upstream Institute Research Initiative */}
-      <section className="p-5 border-2 border-black dark:border-sky-300 bg-amber-50/60 dark:bg-slate-950/90 space-y-3.5 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)]">
-        <div className="flex items-center justify-between">
+      <section className="p-5 border-2 border-black dark:border-sky-300 bg-amber-50/60 dark:bg-slate-950/90 space-y-4 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(56,189,248,0.8)]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-sky-300">
-            <Lightbulb className="w-4 h-4 text-black dark:text-sky-300" />
+            <Lightbulb className="w-4 h-4 text-black dark:text-sky-300 shrink-0" />
             <span>{t.sec3Tag}</span>
           </div>
 
-          <a
-            href={ADVISORY_INFO.researchInitiative.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-2.5 py-1 border border-black dark:border-sky-300 bg-white dark:bg-slate-900 text-black dark:text-sky-100 hover:bg-black hover:text-white dark:hover:bg-sky-400 dark:hover:text-slate-950 font-mono text-[11px] font-bold uppercase transition-all flex items-center gap-1"
-          >
-            <span>{t.sec3VisitWeb}</span>
-            <Globe className="w-3.5 h-3.5" />
-          </a>
+          {/* Two Action Buttons: Website & White Paper */}
+          <div className="flex flex-wrap items-center gap-2">
+            <a
+              href={ADVISORY_INFO.researchInitiative.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-white dark:bg-slate-900 text-black dark:text-sky-100 hover:bg-black hover:text-white dark:hover:bg-sky-400 dark:hover:text-slate-950 font-mono text-xs font-bold uppercase transition-all flex items-center gap-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)]"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>{t.sec3VisitWeb}</span>
+            </a>
+
+            <a
+              href={ADVISORY_INFO.researchInitiative.whitePaperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 border-2 border-black dark:border-sky-300 bg-emerald-100 dark:bg-sky-950 text-emerald-950 dark:text-sky-100 hover:bg-emerald-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-slate-950 font-mono text-xs font-bold uppercase transition-all flex items-center gap-1.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(56,189,248,0.8)]"
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>{t.sec3WhitePaper}</span>
+            </a>
+          </div>
         </div>
 
         <div>

@@ -49,9 +49,9 @@ export const TRANSLATIONS = {
     sec3Tag: "Research Initiative • Think Tank",
     sec3VisitWeb: "Visit Website",
     sec3WhitePaper: "White Paper",
-    sec3GuidanceLabel: "Guidance & Philosophical Framework:",
+    sec3GuidanceLabel: "Co-Founders, Guidance, and Philosophical Framework:",
     researchInitiative: {
-      name: "Upstream Institute",
+      name: "Upstream Institute (Helsinki)",
       description: "Focused on the reimagination of capital stewardship at the intersection of philosophy, science, tech, and finance, integrating the works of David Bohm from the lens of Paavo Pylkkänen."
     },
 
@@ -149,9 +149,9 @@ export const TRANSLATIONS = {
     sec3Tag: "Tutkimusaloite • Ajatushautomo",
     sec3VisitWeb: "Vieraile sivustolla",
     sec3WhitePaper: "Valkoinen kirja (White Paper)",
-    sec3GuidanceLabel: "Ohjaus ja filosofinen viitekehys:",
+    sec3GuidanceLabel: "Kanssaperustajat, ohjaus ja filosofinen viitekehys:",
     researchInitiative: {
-      name: "Upstream Institute",
+      name: "Upstream Institute (Helsinki)",
       description: "Keskittyy pääoman hallinnan uudelleenajatteluun filosofian, tieteen, teknologian ja rahoituksen leikkauspisteessä yhdistäen David Bohmin työtä Paavo Pylkkäsen näkökulmasta."
     },
 

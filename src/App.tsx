@@ -56,13 +56,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50/70 via-neutral-100 to-amber-100/40 dark:from-slate-950 dark:via-sky-950 dark:to-indigo-950 text-neutral-900 dark:text-sky-50 transition-colors duration-300 py-6 sm:py-12 px-3 sm:px-6 flex flex-col items-center justify-center font-sans relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#f8f9fa] dark:bg-[#0b0c0e] text-neutral-900 dark:text-neutral-100 transition-colors duration-300 py-6 sm:py-12 px-3 sm:px-6 flex flex-col items-center justify-center font-sans relative overflow-x-hidden">
       
-      {/* Black & White Artistic Nordic Line Art + Seasonal Background (Sunlight Radiation in Summer / Ice Frost in Winter) */}
+      {/* Clean Minimal Background with Dot Pattern and Topographic accents */}
       <NordicBackground theme={theme} />
 
       {/* Main Single Page Frame */}
-      <main className="w-full max-w-3xl bg-white/95 dark:bg-slate-900/90 border-2 sm:border-4 border-neutral-900 dark:border-sky-300 shadow-[8px_8px_0px_0px_rgba(180,83,9,0.3)] dark:shadow-[8px_8px_0px_0px_rgba(56,189,248,0.7)] p-5 sm:p-10 space-y-10 relative z-10 overflow-hidden transition-all duration-300 backdrop-blur-sm">
+      <main className="w-full max-w-3xl bg-white dark:bg-[#121418] border border-neutral-200 dark:border-neutral-800 shadow-sm rounded-xl p-5 sm:p-10 space-y-10 relative z-10 transition-all duration-300">
         
         {/* Header with Headshot & Profile */}
         <Header
@@ -106,4 +106,3 @@ export default function App() {
     </div>
   );
 }
-

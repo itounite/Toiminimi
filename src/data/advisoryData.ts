@@ -22,7 +22,13 @@ export const ADVISORY_INFO = {
       category: "Board Member",
       entities: [
         { name: "Perfat Technologies", location: "Finland", url: "https://perfat.fi" },
-        { name: "Swedish Algae Factory", location: "Sweden", url: "https://swedishalgaefactory.com" }
+        { name: "Swedish Algae Factory", location: "Sweden", url: "https://swedishalgaefactory.com" },
+        { 
+          name: "G-Gravity Srl", 
+          location: "Italy", 
+          note: "Developed - Vantaa Innovation Activator, Finland", 
+          url: "https://g-gravity.it" 
+        }
       ]
     },
     {
@@ -51,7 +57,7 @@ export const ADVISORY_INFO = {
   ],
 
   researchInitiative: {
-    name: "Upstream Institute",
+    name: "Upstream Institute (Helsinki)",
     url: "https://upstreaminstitute.org/",
     whitePaperUrl: "https://upstreaminstitute.org/#white-paper",
     description: "Focused on the reimagination of capital stewardship at the intersection of philosophy, science, tech, and finance, integrating the works of David Bohm from the lens of Paavo Pylkkänen.",
